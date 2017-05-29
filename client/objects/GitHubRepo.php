@@ -30,10 +30,18 @@ class GitHubRepo extends GitHubSimpleRepo
 			'pushed_at' => 'string',
 			'created_at' => 'string',
 			'updated_at' => 'string',
+      'stargazers_count' => 'int',
 			'parent' => 'GitHubSimpleRepo',
 		));
 	}
-	
+
+
+  /**
+   * @var int
+   */	
+  protected $stargazers_count;
+
+
 	/**
 	 * @var string
 	 */
@@ -280,6 +288,10 @@ class GitHubRepo extends GitHubSimpleRepo
 	{
 		return $this->parent;
 	}
+
+  public function getStargazers() {
+    return $this->stargazers_count;
+  }
 
 }
 
